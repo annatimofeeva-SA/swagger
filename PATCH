@@ -1,0 +1,34 @@
+    patch:
+      tags:
+        - Пользователи
+      summary: Изменить email пользователя
+      parameters:
+        - name: userId
+          in: path
+          description: Уникальное значение ID пользователя
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: Новый email пользователя
+              required:
+                - email
+      responses:
+        '200':
+          description: email пользователя обновлен
+        '401':
+          description: Не авторизован
+        '403':
+          description: Доступ запрещен
+        '404':
+          description: Пользователь не найден
+        '500':
+          description: Сервер не доступен
