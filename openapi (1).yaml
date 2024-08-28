@@ -185,6 +185,30 @@ paths:
         '500':
           description: Сервер не доступен
           
+    get:
+      tags:
+        - Пользователи
+      summary: Получить информацию о пользователе
+      description: Возвращает информацию о пользователе
+      parameters:
+        - name: userId
+          in: path
+          description: Уникальное значение ID пользователя
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Успешный запрос
+        '401':
+          description: Не авторизован
+        '403':
+          description: Доступ запрещен
+        '404':
+          description: Данные не найдены
+        '500':
+          description: Сервер не доступен 
+          
 components:
   schemas:
     NewAccount:
