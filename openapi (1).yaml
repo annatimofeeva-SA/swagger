@@ -126,6 +126,7 @@ paths:
         '500':
           description: Сервер не доступен
           
+  /users/{userId}/email:       
     patch:
       tags:
         - Пользователи
